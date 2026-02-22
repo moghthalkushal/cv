@@ -1,0 +1,1506 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kushal M K | Principal Enterprise Architect</title>
+    <meta name="description"
+        content="Portfolio of Kushal M K, Principal Solution Architect specializing in 360&deg; Enterprise Architecture, Cloud-Native, Azure, and .NET.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Tailwind CSS Configuration -->
+    <script>
+        window.tailwind = {
+            config: {
+                darkMode: 'class',
+                theme: {
+                    extend: {
+                        fontFamily: {
+                            sans: ['Inter', 'sans-serif'],
+                            mono: ['JetBrains Mono', 'monospace'],
+                        },
+                        colors: {
+                            brand: {
+                                50: '#ecfeff',
+                                100: '#cffafe',
+                                200: '#a5f3fc',
+                                400: '#22d3ee',
+                                500: '#06b6d4',
+                                600: '#0891b2',
+                                700: '#0e7490',
+                                900: '#164e63',
+                            },
+                            accent: {
+                                400: '#fbbf24',
+                                500: '#f59e0b',
+                                600: '#d97706',
+                            },
+                            violet: {
+                                400: '#a78bfa',
+                                500: '#8b5cf6',
+                                600: '#7c3aed',
+                            }
+                        }
+                    }
+                }
+            }
+        };
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        body {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* --- GLASS PANELS --- */
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(226, 232, 240, 0.6);
+        }
+
+        .dark .glass-panel {
+            background: rgba(15, 23, 42, 0.88);
+            border-bottom: 1px solid rgba(51, 65, 85, 0.5);
+            border-right: 1px solid rgba(51, 65, 85, 0.5);
+        }
+
+        /* --- GLASSMORPHISM CARDS --- */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(226, 232, 240, 0.8);
+            transition: transform 0.3s cubic-bezier(.4, 0, .2, 1), box-shadow 0.3s cubic-bezier(.4, 0, .2, 1);
+        }
+
+        .glass-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px -12px rgba(6, 182, 212, 0.15), 0 8px 16px -8px rgba(0, 0, 0, 0.1);
+        }
+
+        .dark .glass-card {
+            background: rgba(30, 41, 59, 0.6);
+            border: 1px solid rgba(51, 65, 85, 0.6);
+        }
+
+        .dark .glass-card:hover {
+            box-shadow: 0 20px 40px -12px rgba(6, 182, 212, 0.2), 0 8px 16px -8px rgba(0, 0, 0, 0.3);
+        }
+
+        /* --- GRADIENT TEXT --- */
+        .gradient-text {
+            background: linear-gradient(135deg, #06b6d4, #8b5cf6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .dark .gradient-text {
+            background: linear-gradient(135deg, #22d3ee, #a78bfa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* --- GRADIENT BORDER ACCENT --- */
+        .gradient-border-top {
+            position: relative;
+        }
+
+        .gradient-border-top::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #06b6d4, #8b5cf6, #f59e0b);
+            border-radius: 3px 3px 0 0;
+        }
+
+        /* --- HERO MESH GRADIENT --- */
+        .hero-gradient {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-gradient::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(ellipse at 20% 50%, rgba(6, 182, 212, 0.12) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 20%, rgba(139, 92, 246, 0.1) 0%, transparent 50%),
+                radial-gradient(ellipse at 60% 80%, rgba(245, 158, 11, 0.08) 0%, transparent 50%);
+            animation: gradientShift 12s ease-in-out infinite alternate;
+            z-index: 0;
+        }
+
+        .dark .hero-gradient::before {
+            background: radial-gradient(ellipse at 20% 50%, rgba(6, 182, 212, 0.18) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 20%, rgba(139, 92, 246, 0.15) 0%, transparent 50%),
+                radial-gradient(ellipse at 60% 80%, rgba(245, 158, 11, 0.1) 0%, transparent 50%);
+        }
+
+        @keyframes gradientShift {
+            0% {
+                transform: translate(0, 0) rotate(0deg);
+            }
+
+            50% {
+                transform: translate(-3%, 2%) rotate(1deg);
+            }
+
+            100% {
+                transform: translate(2%, -1%) rotate(-1deg);
+            }
+        }
+
+        /* --- FLOATING GEOMETRICS --- */
+        .hero-gradient::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image:
+                radial-gradient(circle at 15% 25%, rgba(6, 182, 212, 0.08) 1px, transparent 1px),
+                radial-gradient(circle at 85% 75%, rgba(139, 92, 246, 0.06) 1px, transparent 1px),
+                radial-gradient(circle at 50% 10%, rgba(245, 158, 11, 0.05) 1px, transparent 1px);
+            background-size: 60px 60px, 80px 80px, 100px 100px;
+            animation: floatGeometry 20s linear infinite;
+            z-index: 0;
+        }
+
+        @keyframes floatGeometry {
+            0% {
+                background-position: 0 0, 0 0, 0 0;
+            }
+
+            100% {
+                background-position: 60px 60px, -80px 80px, 100px -100px;
+            }
+        }
+
+        /* --- SCROLL REVEAL --- */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.7s cubic-bezier(.4, 0, .2, 1), transform 0.7s cubic-bezier(.4, 0, .2, 1);
+        }
+
+        .reveal.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .reveal {
+                opacity: 1;
+                transform: none;
+                transition: none;
+            }
+        }
+
+        /* --- PULSE GLOW --- */
+        @keyframes pulseGlow {
+
+            0%,
+            100% {
+                box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.5);
+            }
+
+            50% {
+                box-shadow: 0 0 0 8px rgba(245, 158, 11, 0);
+            }
+        }
+
+        .pulse-amber {
+            animation: pulseGlow 2s ease-in-out infinite;
+        }
+
+        @keyframes pulseGlowCyan {
+
+            0%,
+            100% {
+                box-shadow: 0 0 0 0 rgba(6, 182, 212, 0.5);
+            }
+
+            50% {
+                box-shadow: 0 0 0 8px rgba(6, 182, 212, 0);
+            }
+        }
+
+        .pulse-cyan {
+            animation: pulseGlowCyan 2s ease-in-out infinite;
+        }
+
+        /* --- SHIMMER EFFECT --- */
+        .shimmer {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .shimmer::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(6, 182, 212, 0.08), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .shimmer:hover::after {
+            left: 100%;
+        }
+
+        /* --- ANIMATED ARCH LINES --- */
+        .arch-line {
+            stroke-dasharray: 4;
+            animation: dash 20s linear infinite;
+        }
+
+        @keyframes dash {
+            to {
+                stroke-dashoffset: -100;
+            }
+        }
+
+        /* --- TIMELINE GRADIENT --- */
+        .timeline-line {
+            background: linear-gradient(180deg, #06b6d4, #8b5cf6, #f59e0b);
+        }
+
+        /* --- ICON GRADIENT CIRCLE --- */
+        .icon-circle {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, rgba(6, 182, 212, 0.15), rgba(139, 92, 246, 0.15));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .dark .icon-circle {
+            background: linear-gradient(135deg, rgba(6, 182, 212, 0.25), rgba(139, 92, 246, 0.25));
+        }
+
+        /* --- NAV ACTIVE LINK --- */
+        .nav-link {
+            position: relative;
+            transition: all 0.25s ease;
+        }
+
+        .nav-link.active {
+            background: rgba(6, 182, 212, 0.1);
+            color: #06b6d4;
+            border-left: 3px solid #06b6d4;
+        }
+
+        .dark .nav-link.active {
+            background: rgba(34, 211, 238, 0.1);
+            color: #22d3ee;
+            border-left: 3px solid #22d3ee;
+        }
+
+        /* --- AVATAR RING --- */
+        .avatar-ring {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #06b6d4, #8b5cf6);
+            padding: 2px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .avatar-ring>div {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: #f8fafc;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 16px;
+            color: #0e7490;
+        }
+
+        .dark .avatar-ring>div {
+            background: #0f172a;
+            color: #22d3ee;
+        }
+
+        /* --- PRINT --- */
+        @media print {
+            body {
+                background: white !important;
+                color: black !important;
+                font-size: 11pt;
+            }
+
+            .no-print,
+            nav,
+            .theme-toggle {
+                display: none !important;
+            }
+
+            .print-break-inside-avoid {
+                page-break-inside: avoid;
+            }
+
+            .print-break-before {
+                page-break-before: always;
+            }
+
+            .dark {
+                color-scheme: light;
+            }
+
+            .dark\:bg-slate-900 {
+                background-color: white !important;
+            }
+
+            .dark\:bg-slate-800 {
+                background-color: #f8fafc !important;
+                border: 1px solid #e2e8f0;
+            }
+
+            .dark\:text-white {
+                color: #000 !important;
+            }
+
+            .dark\:text-slate-300,
+            .dark\:text-slate-400 {
+                color: #475569 !important;
+            }
+
+            .dark\:border-slate-700 {
+                border-color: #e2e8f0 !important;
+            }
+
+            section {
+                padding-top: 20px !important;
+                padding-bottom: 20px !important;
+            }
+
+            a[href]::after {
+                content: " (" attr(href) ")";
+                font-size: 90%;
+                color: #0891b2;
+            }
+
+            a[href^="#"]::after {
+                content: "";
+            }
+
+            .reveal {
+                opacity: 1 !important;
+                transform: none !important;
+            }
+
+            .hero-gradient::before,
+            .hero-gradient::after {
+                display: none;
+            }
+        }
+
+        /* --- SCROLLBAR --- */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, #06b6d4, #8b5cf6);
+            border-radius: 4px;
+        }
+
+        .dark ::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, #0e7490, #7c3aed);
+        }
+    </style>
+</head>
+
+<body
+    class="bg-slate-50 text-slate-900 dark:bg-slate-900 dark:text-slate-50 transition-colors duration-300 font-sans selection:bg-brand-500 selection:text-white">
+
+    <!-- Navigation -->
+    <nav
+        class="no-print fixed top-0 w-full z-50 glass-panel lg:w-64 lg:h-screen lg:flex lg:flex-col lg:justify-between transition-all border-r border-slate-200 dark:border-slate-700">
+        <!-- Gradient accent bar -->
+        <div class="hidden lg:block h-[3px] w-full bg-gradient-to-r from-brand-500 via-violet-500 to-accent-500"></div>
+        <div class="p-6 flex justify-between items-center lg:block">
+            <div class="flex items-center gap-3">
+                <div class="avatar-ring">
+                    <div>KM</div>
+                </div>
+                <div>
+                    <h1 class="text-xl font-extrabold tracking-tight text-slate-900 dark:text-white">KUSHAL M K</h1>
+                    <p class="text-[11px] font-mono mt-0.5 font-bold uppercase tracking-wider gradient-text">
+                        Principal Architect</p>
+                </div>
+            </div>
+            <button id="mobile-menu-btn" class="lg:hidden text-slate-800 dark:text-slate-200">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+
+        <ul id="nav-links"
+            class="hidden lg:flex flex-col px-4 pb-4 space-y-0.5 text-sm font-bold text-slate-700 dark:text-slate-300">
+            <li><a href="#hero"
+                    class="nav-link block px-4 py-2.5 rounded-lg hover:bg-brand-50 dark:hover:bg-slate-800 hover:text-brand-600 dark:hover:text-brand-400 transition-all"
+                    data-section="hero">Overview</a></li>
+            <li><a href="#role-fit"
+                    class="nav-link block px-4 py-2.5 rounded-lg hover:bg-brand-50 dark:hover:bg-slate-800 hover:text-brand-600 dark:hover:text-brand-400 transition-all"
+                    data-section="role-fit">Why Me</a></li>
+            <li><a href="#capabilities"
+                    class="nav-link block px-4 py-2.5 rounded-lg hover:bg-brand-50 dark:hover:bg-slate-800 hover:text-brand-600 dark:hover:text-brand-400 transition-all"
+                    data-section="capabilities">Capability Map</a></li>
+            <li><a href="#experience"
+                    class="nav-link block px-4 py-2.5 rounded-lg hover:bg-brand-50 dark:hover:bg-slate-800 hover:text-brand-600 dark:hover:text-brand-400 transition-all"
+                    data-section="experience">Experience</a></li>
+            <li><a href="#expertise"
+                    class="nav-link block px-4 py-2.5 rounded-lg hover:bg-brand-50 dark:hover:bg-slate-800 hover:text-brand-600 dark:hover:text-brand-400 transition-all"
+                    data-section="expertise">Tech Expertise</a></li>
+            <li><a href="#architecture"
+                    class="nav-link block px-4 py-2.5 rounded-lg hover:bg-brand-50 dark:hover:bg-slate-800 hover:text-brand-600 dark:hover:text-brand-400 transition-all"
+                    data-section="architecture">Reference Arch</a></li>
+            <li><a href="#metrics"
+                    class="nav-link block px-4 py-2.5 rounded-lg hover:bg-brand-50 dark:hover:bg-slate-800 hover:text-brand-600 dark:hover:text-brand-400 transition-all"
+                    data-section="metrics">Impact & Skills</a></li>
+        </ul>
+
+        <div class="hidden lg:block p-6 border-t border-slate-700">
+            <div class="flex gap-4 text-slate-500">
+                <a href="#" class="hover:text-brand-400 transition-all hover:scale-110 transform"><i
+                        data-lucide="linkedin" class="w-5 h-5"></i></a>
+                <a href="mailto:emailkushalmk@gmail.com"
+                    class="hover:text-brand-400 transition-all hover:scale-110 transform"><i data-lucide="mail"
+                        class="w-5 h-5"></i></a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content Wrapper -->
+    <main class="lg:ml-64 pt-20 lg:pt-0">
+
+        <!-- 1. HERO SECTION -->
+        <section id="hero"
+            class="hero-gradient min-h-[95vh] flex flex-col justify-center px-6 lg:px-20 py-12 bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800">
+            <div class="relative z-10 max-w-4xl">
+                <div
+                    class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-amber-50 dark:bg-amber-900/20 text-amber-700 dark:text-amber-400 text-xs font-mono font-bold mb-6 border border-amber-200 dark:border-amber-700/50 shadow-sm">
+                    <span class="w-2 h-2 rounded-full bg-accent-500 pulse-amber"></span>
+                    Open to Enterprise Architecture Leadership Roles
+                </div>
+
+                <h1
+                    class="text-4xl md:text-6xl font-extrabold tracking-tight mb-6 text-slate-900 dark:text-white leading-[1.15]">
+                    Enterprise Architecture,
+                    <span class="gradient-text">.NET &amp; AI-Enabled Scale.</span>
+                </h1>
+
+                <p
+                    class="text-lg md:text-xl text-slate-600 dark:text-slate-300 mb-8 max-w-3xl leading-relaxed font-medium">
+                    14+ years delivering large-scale digital platforms across retail, commerce, consumer, and enterprise
+                    domains. Deep hands-on foundation in <strong
+                        class="text-slate-900 dark:text-white font-bold">.NET/C#, ASP.NET, and Azure</strong>, combined
+                    with architectural mastery of <strong class="text-slate-900 dark:text-white font-bold">cloud-native,
+                        API-first, microservices, and event-driven patterns</strong>. Actively drives
+                    <strong class="text-slate-900 dark:text-white font-bold">AI/GenAI and agentic enablement</strong>
+                    within architecture and engineering workflows&mdash;accelerating architecture artifacts, standards
+                    productization, and knowledge-driven engineering experiences.
+                </p>
+
+                <div class="flex flex-wrap gap-4 mb-10 no-print">
+                    <button onclick="window.print()"
+                        class="px-6 py-3 rounded-lg bg-gradient-to-r from-brand-500 to-violet-500 hover:from-brand-600 hover:to-violet-600 text-white font-bold flex items-center gap-2 transition-all shadow-lg hover:shadow-brand-500/25 hover:scale-[1.03] transform">
+                        <i data-lucide="download" class="w-5 h-5"></i> Download CV as PDF
+                    </button>
+                </div>
+
+                <div
+                    class="flex flex-wrap gap-2 text-[13px] font-mono font-semibold text-slate-700 dark:text-slate-300">
+                    <span
+                        class="shimmer px-3 py-1.5 bg-white dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-700 shadow-sm">Enterprise
+                        Architecture</span>
+                    <span
+                        class="shimmer px-3 py-1.5 bg-white dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-700 shadow-sm">Azure
+                        & .NET Core</span>
+                    <span
+                        class="shimmer px-3 py-1.5 bg-white dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-700 shadow-sm">Retail
+                        & CPG Scale</span>
+                    <span
+                        class="shimmer px-3 py-1.5 bg-white dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-700 shadow-sm">API
+                        & Event-Driven (Kafka)</span>
+                    <span
+                        class="shimmer px-3 py-1.5 bg-white dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-700 shadow-sm">Data
+                        Lake &amp; AI</span>
+                    <span
+                        class="shimmer px-3 py-1.5 bg-gradient-to-r from-brand-500/10 to-violet-500/10 dark:from-brand-400/15 dark:to-violet-400/15 rounded-lg border border-brand-400/30 dark:border-brand-400/40 shadow-sm text-brand-600 dark:text-brand-400">AI
+                        &amp; Agentic Architecture</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. WHY ME -->
+        <section id="role-fit" class="px-6 lg:px-20 py-20 bg-slate-50 dark:bg-slate-900 print-break-inside-avoid">
+            <div class="max-w-5xl">
+                <div class="mb-12 reveal">
+                    <h2 class="text-3xl md:text-4xl font-extrabold mb-3 text-slate-900 dark:text-white">The 360&deg;
+                        <span class="gradient-text">Architect Advantage</span>
+                    </h2>
+                    <p class="text-lg text-slate-500 dark:text-slate-400">Mapping 14+ years of full-spectrum
+                        modernization to your enterprise needs.</p>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6">
+                    <!-- Card 1 -->
+                    <div class="glass-card p-8 rounded-xl shadow-sm reveal">
+                        <div class="flex items-center gap-4 mb-5">
+                            <div class="icon-circle"><i data-lucide="globe"
+                                    class="w-6 h-6 text-brand-500 dark:text-brand-400"></i></div>
+                            <h3 class="font-bold text-xl text-slate-900 dark:text-white">Holistic Enterprise Scope</h3>
+                        </div>
+                        <p class="text-slate-600 dark:text-slate-300 mb-5 leading-relaxed">Designing across the entire
+                            stack: from frontend touchpoints and mobile to deep backend ERP integrations and MarTech
+                            orchestration.</p>
+                        <ul class="text-sm space-y-3 text-slate-600 dark:text-slate-300">
+                            <li class="flex items-start gap-3"><i data-lucide="check-circle-2"
+                                    class="w-5 h-5 text-brand-500 dark:text-brand-400 mt-0.5 shrink-0"></i>
+                                <span>Delivered end-to-end commerce architecture, integrating Shopify, OMS, and
+                                    Salesforce Marketing Cloud at <strong>Kenvue</strong>.</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- Card 2 -->
+                    <div class="glass-card p-8 rounded-xl shadow-sm reveal" style="transition-delay:0.1s">
+                        <div class="flex items-center gap-4 mb-5">
+                            <div class="icon-circle"><i data-lucide="cloud"
+                                    class="w-6 h-6 text-brand-500 dark:text-brand-400"></i></div>
+                            <h3 class="font-bold text-xl text-slate-900 dark:text-white">Azure, .NET &amp; Cloud-Native
+                            </h3>
+                        </div>
+                        <p class="text-slate-600 dark:text-slate-300 mb-5 leading-relaxed">Deep hands-on and
+                            architectural mastery of the Microsoft ecosystem&mdash;14+ years building with C#, .NET
+                            Core, ASP.NET, and Azure, bridging legacy monoliths to cloud-native microservices.</p>
+                        <ul class="text-sm space-y-3 text-slate-600 dark:text-slate-300">
+                            <li class="flex items-start gap-3"><i data-lucide="check-circle-2"
+                                    class="w-5 h-5 text-brand-500 dark:text-brand-400 mt-0.5 shrink-0"></i>
+                                <span>Full-stack .NET expertise: <strong class="text-slate-900 dark:text-white">C#, .NET
+                                        Core, ASP.NET MVC, Entity Framework, SQL Server, SSRS/SSIS</strong>.</span></li>
+                            <li class="flex items-start gap-3"><i data-lucide="check-circle-2"
+                                    class="w-5 h-5 text-brand-500 dark:text-brand-400 mt-0.5 shrink-0"></i> <span>Azure
+                                    platform: AKS, Service Bus, Functions, App Services, Azure DevOps,
+                                    ARM/Terraform.</span></li>
+                            <li class="flex items-start gap-3"><i data-lucide="check-circle-2"
+                                    class="w-5 h-5 text-brand-500 dark:text-brand-400 mt-0.5 shrink-0"></i> <span>Led
+                                    monolith-to-microservices migrations using Docker, Kubernetes, and event-driven
+                                    patterns across multiple enterprises.</span></li>
+                        </ul>
+                    </div>
+                    <!-- Card 3 -->
+                    <div class="glass-card p-8 rounded-xl shadow-sm reveal" style="transition-delay:0.2s">
+                        <div class="flex items-center gap-4 mb-5">
+                            <div class="icon-circle"><i data-lucide="shopping-cart"
+                                    class="w-6 h-6 text-brand-500 dark:text-brand-400"></i></div>
+                            <h3 class="font-bold text-xl text-slate-900 dark:text-white">Retail Scale & IoT</h3>
+                        </div>
+                        <p class="text-slate-600 dark:text-slate-300 mb-5 leading-relaxed">Proven track record handling
+                            massive consumer throughput, CPG transformation, and complex operational/IoT data streams.
+                        </p>
+                        <ul class="text-sm space-y-3 text-slate-600 dark:text-slate-300">
+                            <li class="flex items-start gap-3"><i data-lucide="check-circle-2"
+                                    class="w-5 h-5 text-brand-500 dark:text-brand-400 mt-0.5 shrink-0"></i> <span>Built
+                                    high-volume supply chain, personalization, and <strong>IoT integrations</strong> at
+                                    <strong>Walmart Labs</strong>.</span></li>
+                        </ul>
+                    </div>
+                    <!-- Card 4 -->
+                    <div class="glass-card p-8 rounded-xl shadow-sm reveal" style="transition-delay:0.3s">
+                        <div class="flex items-center gap-4 mb-5">
+                            <div class="icon-circle"><i data-lucide="bot"
+                                    class="w-6 h-6 text-brand-500 dark:text-brand-400"></i></div>
+                            <h3 class="font-bold text-xl text-slate-900 dark:text-white">AI &amp; Agentic Architecture
+                            </h3>
+                        </div>
+                        <p class="text-slate-600 dark:text-slate-300 mb-5 leading-relaxed">Driving AI/GenAI and agentic
+                            enablement within enterprise architecture&mdash;accelerating outputs, governance, and
+                            knowledge-driven workflows.</p>
+                        <ul class="text-sm space-y-3 text-slate-600 dark:text-slate-300">
+                            <li class="flex items-start gap-3"><i data-lucide="check-circle-2"
+                                    class="w-5 h-5 text-brand-500 dark:text-brand-400 mt-0.5 shrink-0"></i>
+                                <span>AI-assisted architecture artifacts, standards discovery, and BRD-to-delivery
+                                    automation at <strong>Kenvue</strong>.</span>
+                            </li>
+                            <li class="flex items-start gap-3"><i data-lucide="check-circle-2"
+                                    class="w-5 h-5 text-brand-500 dark:text-brand-400 mt-0.5 shrink-0"></i>
+                                <span>MCP-oriented enterprise thinking, governance-first AI adoption, and architecture
+                                    portal/search concepts.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. CAPABILITY MAP -->
+        <section id="capabilities"
+            class="px-6 lg:px-20 py-20 bg-white dark:bg-slate-900 border-y border-slate-200 dark:border-slate-800 print-break-inside-avoid">
+            <div class="max-w-5xl">
+                <div class="mb-12 reveal">
+                    <h2 class="text-3xl md:text-4xl font-extrabold mb-3 text-slate-900 dark:text-white">Enterprise
+                        Architecture <span class="gradient-text">Capability Map</span></h2>
+                    <p class="text-lg text-slate-500 dark:text-slate-400">Holistic governance and design across the
+                        modern technology stack.</p>
+                </div>
+
+                <div
+                    class="border border-slate-300 dark:border-slate-700 rounded-xl bg-white dark:bg-slate-800 overflow-hidden text-sm shadow-sm">
+                    <!-- Layer 1 -->
+                    <div class="grid grid-cols-1 md:grid-cols-4 border-b border-slate-300 dark:border-slate-700">
+                        <div
+                            class="p-5 bg-slate-200 dark:bg-slate-800/80 font-extrabold text-slate-900 dark:text-slate-100 flex items-center border-r border-slate-300 dark:border-slate-700">
+                            1. Experience / Touchpoints</div>
+                        <div class="p-5 md:col-span-3 flex flex-wrap gap-2.5">
+                            <span
+                                class="px-4 py-2 bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 rounded shadow-sm text-slate-900 dark:text-slate-100 font-bold">B2C/B2B
+                                E-Commerce</span>
+                            <span
+                                class="px-4 py-2 bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 rounded shadow-sm text-slate-900 dark:text-slate-100 font-bold">Mobile
+                                App (React/Native)</span>
+                            <span
+                                class="px-4 py-2 bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 rounded shadow-sm text-slate-900 dark:text-slate-100 font-bold">POS
+                                / In-Store Tech</span>
+                            <span
+                                class="px-4 py-2 bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 rounded shadow-sm text-slate-900 dark:text-slate-100 font-bold">Headless
+                                CMS</span>
+                        </div>
+                    </div>
+                    <!-- Layer 2 -->
+                    <div class="grid grid-cols-1 md:grid-cols-4 border-b border-slate-300 dark:border-slate-700">
+                        <div
+                            class="p-5 bg-slate-200 dark:bg-slate-800/80 font-extrabold text-slate-900 dark:text-slate-100 flex items-center border-r border-slate-300 dark:border-slate-700">
+                            2. API & Integration Layer</div>
+                        <div class="p-5 md:col-span-3 flex flex-wrap gap-2.5">
+                            <span
+                                class="px-4 py-2 bg-brand-50 dark:bg-brand-900/30 border border-brand-300 dark:border-brand-700 rounded shadow-sm text-brand-800 dark:text-brand-300 font-black">Azure
+                                API Management</span>
+                            <span
+                                class="px-4 py-2 bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 rounded shadow-sm text-slate-900 dark:text-slate-100 font-bold">GraphQL
+                                / BFF</span>
+                            <span
+                                class="px-4 py-2 bg-brand-50 dark:bg-brand-900/30 border border-brand-300 dark:border-brand-700 rounded shadow-sm text-brand-800 dark:text-brand-300 font-black">Azure
+                                Service Bus / Kafka</span>
+                            <span
+                                class="px-4 py-2 bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 rounded shadow-sm text-slate-900 dark:text-slate-100 font-bold">IoT
+                                Gateways</span>
+                        </div>
+                    </div>
+                    <!-- Layer 3 -->
+                    <div class="grid grid-cols-1 md:grid-cols-4 border-b border-slate-300 dark:border-slate-700">
+                        <div
+                            class="p-5 bg-slate-200 dark:bg-slate-800/80 font-extrabold text-slate-900 dark:text-slate-100 flex items-center border-r border-slate-300 dark:border-slate-700">
+                            3. Business Domains</div>
+                        <div class="p-5 md:col-span-3 flex flex-wrap gap-2.5">
+                            <span
+                                class="px-4 py-2 bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 rounded shadow-sm text-slate-900 dark:text-slate-100 font-bold">Order
+                                Management (OMS)</span>
+                            <span
+                                class="px-4 py-2 bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 rounded shadow-sm text-slate-900 dark:text-slate-100 font-bold">Product
+                                Catalog / PIM</span>
+                            <span
+                                class="px-4 py-2 bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 rounded shadow-sm text-slate-900 dark:text-slate-100 font-bold">Pricing
+                                & Promo Engine</span>
+                            <span
+                                class="px-4 py-2 bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 rounded shadow-sm text-slate-900 dark:text-slate-100 font-bold">Inventory
+                                & Supply Chain</span>
+                            <span
+                                class="px-4 py-2 bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 rounded shadow-sm text-slate-900 dark:text-slate-100 font-bold">Customer
+                                Profile / CDP</span>
+                        </div>
+                    </div>
+                    <!-- Layer 4 -->
+                    <div class="grid grid-cols-1 md:grid-cols-4 border-b border-slate-300 dark:border-slate-700">
+                        <div
+                            class="p-5 bg-slate-200 dark:bg-slate-800/80 font-extrabold text-slate-900 dark:text-slate-100 flex items-center border-r border-slate-300 dark:border-slate-700">
+                            4. Data, AI & Mar-Tech</div>
+                        <div class="p-5 md:col-span-3 flex flex-wrap gap-2.5">
+                            <span
+                                class="px-4 py-2 bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 rounded shadow-sm text-slate-900 dark:text-slate-100 font-bold">Salesforce
+                                Marketing Cloud</span>
+                            <span
+                                class="px-4 py-2 bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 rounded shadow-sm text-slate-900 dark:text-slate-100 font-bold">Databricks
+                                / Snowflake</span>
+                            <span
+                                class="px-4 py-2 bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 rounded shadow-sm text-slate-900 dark:text-slate-100 font-bold">GenAI
+                                / Milvus Vector DB</span>
+                            <span
+                                class="px-4 py-2 bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 rounded shadow-sm text-slate-900 dark:text-slate-100 font-bold">ERP
+                                / SAP Integration</span>
+                        </div>
+                    </div>
+                    <!-- Layer 5 -->
+                    <div class="grid grid-cols-1 md:grid-cols-4">
+                        <div
+                            class="p-5 bg-slate-200 dark:bg-slate-800/80 font-extrabold text-slate-900 dark:text-slate-100 flex items-center border-r border-slate-300 dark:border-slate-700">
+                            5. Foundation & Platform</div>
+                        <div class="p-5 md:col-span-3 flex flex-wrap gap-2.5">
+                            <span
+                                class="px-4 py-2 bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 rounded shadow-sm text-slate-900 dark:text-slate-100 font-bold">K8s
+                                / Docker</span>
+                            <span
+                                class="px-4 py-2 bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 rounded shadow-sm text-slate-900 dark:text-slate-100 font-bold">Backstage.io
+                                (Dev Portal)</span>
+                            <span
+                                class="px-4 py-2 bg-brand-50 dark:bg-brand-900/30 border border-brand-300 dark:border-brand-700 rounded shadow-sm text-brand-800 dark:text-brand-300 font-black">Azure
+                                Landing Zones</span>
+                            <span
+                                class="px-4 py-2 bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 rounded shadow-sm text-slate-900 dark:text-slate-100 font-bold">Observability
+                                (Telemetry)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. EXPERIENCE TIMELINE (Rendered via JSON JS) -->
+        <section id="experience" class="px-6 lg:px-20 py-20 bg-slate-50 dark:bg-slate-900">
+            <div class="max-w-4xl">
+                <div class="mb-12 reveal">
+                    <h2 class="text-3xl md:text-4xl font-extrabold mb-3 text-slate-900 dark:text-white">Experience &
+                        <span class="gradient-text">Architecture Impact</span>
+                    </h2>
+                    <p class="text-lg text-slate-500 dark:text-slate-400">14+ years of driving scale, modernization, and
+                        governance.</p>
+                </div>
+
+                <!-- Dynamic Content Container -->
+                <div id="experience-container" class="relative ml-4 md:ml-6 space-y-16 pb-8"
+                    style="border-left: 2px solid transparent; border-image: linear-gradient(180deg, #06b6d4, #8b5cf6, #f59e0b) 1;">
+                    <!-- JS will populate this -->
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. ARCHITECTURE EXPERTISE TABS -->
+        <section id="expertise"
+            class="px-6 lg:px-20 py-20 bg-white dark:bg-slate-900 border-y border-slate-200 dark:border-slate-800 print-break-before">
+            <div class="max-w-6xl">
+                <div class="mb-12 reveal">
+                    <h2 class="text-3xl md:text-4xl font-extrabold mb-3 text-slate-900 dark:text-white">Technical
+                        <span class="gradient-text">Authority</span>
+                    </h2>
+                    <p class="text-lg text-slate-500 dark:text-slate-400">Deep dives into core competencies.</p>
+                </div>
+
+                <div class="flex flex-col md:flex-row gap-8">
+                    <!-- Tab Headers -->
+                    <div class="md:w-1/3 flex flex-col gap-3 no-print" id="tab-headers">
+                        <button onclick="switchTab(0)"
+                            class="tab-btn active text-left px-5 py-4 rounded-xl border border-brand-600 bg-brand-50 dark:bg-slate-800 font-extrabold text-brand-800 dark:text-brand-400 shadow-sm transition-all">360&deg;
+                            Architecture & Cloud</button>
+                        <button onclick="switchTab(1)"
+                            class="tab-btn text-left px-5 py-4 rounded-xl border border-transparent hover:bg-slate-200 dark:hover:bg-slate-800 font-bold text-slate-700 dark:text-slate-400 transition-all">Azure
+                            & .NET Foundation</button>
+                        <button onclick="switchTab(2)"
+                            class="tab-btn text-left px-5 py-4 rounded-xl border border-transparent hover:bg-slate-200 dark:hover:bg-slate-800 font-bold text-slate-700 dark:text-slate-400 transition-all">Data,
+                            Mar-Tech & AI</button>
+                        <button onclick="switchTab(3)"
+                            class="tab-btn text-left px-5 py-4 rounded-xl border border-transparent hover:bg-slate-200 dark:hover:bg-slate-800 font-bold text-slate-700 dark:text-slate-400 transition-all">API
+                            & Integration (DDD)</button>
+                    </div>
+
+                    <!-- Tab Content -->
+                    <div class="md:w-2/3" id="tab-contents">
+                        <!-- Content 0 -->
+                        <div
+                            class="tab-content block p-8 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 print-break-inside-avoid shadow-sm">
+                            <h3 class="text-2xl font-bold mb-4 flex items-center gap-3 text-slate-900 dark:text-white">
+                                <i data-lucide="layout" class="w-6 h-6 text-brand-600 dark:text-brand-400"></i> 360&deg;
+                                Architecture & Cloud Native
+                            </h3>
+                            <p class="text-slate-700 dark:text-slate-300 mb-6 leading-relaxed text-lg">
+                                Holistic view of enterprise architecture ensuring seamless operation from consumer
+                                touchpoints down to operational databases.
+                            </p>
+                            <ul class="space-y-4 text-slate-800 dark:text-slate-300">
+                                <li class="flex items-start gap-3"><i data-lucide="check"
+                                        class="w-5 h-5 text-brand-600 dark:text-brand-400 mt-0.5 shrink-0"></i>
+                                    <span><strong>Enterprise Governance:</strong> Defining target-state architectures,
+                                        managing Architecture Review Boards (ARBs), and establishing reusable technical
+                                        standards.</span>
+                                </li>
+                                <li class="flex items-start gap-3"><i data-lucide="check"
+                                        class="w-5 h-5 text-brand-600 dark:text-brand-400 mt-0.5 shrink-0"></i>
+                                    <span><strong>Containerization:</strong> Migrating legacy monoliths to
+                                        Docker/Kubernetes (AKS), managing orchestration and networking for high
+                                        availability.</span>
+                                </li>
+                                <li class="flex items-start gap-3"><i data-lucide="check"
+                                        class="w-5 h-5 text-brand-600 dark:text-brand-400 mt-0.5 shrink-0"></i>
+                                    <span><strong>FinOps/Optimization:</strong> Saved over $150K annually at Kenvue via
+                                        infrastructure refactoring, and achieved a 70% cost reduction at
+                                        MatchBoxExchange.</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Content 1 -->
+                        <div
+                            class="tab-content hidden p-8 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 print-break-inside-avoid shadow-sm">
+                            <h3 class="text-2xl font-bold mb-4 flex items-center gap-3 text-slate-900 dark:text-white">
+                                <i data-lucide="code-2" class="w-6 h-6 text-brand-600 dark:text-brand-400"></i> Azure &
+                                .NET Foundation
+                            </h3>
+                            <p class="text-slate-700 dark:text-slate-300 mb-6 leading-relaxed text-lg">
+                                14+ years of hands-on software engineering, ensuring my high-level architecture is
+                                grounded in execution reality and deep Microsoft stack expertise.
+                            </p>
+                            <ul class="space-y-4 text-slate-800 dark:text-slate-300">
+                                <li class="flex items-start gap-3"><i data-lucide="check"
+                                        class="w-5 h-5 text-brand-600 dark:text-brand-400 mt-0.5 shrink-0"></i>
+                                    <span><strong>Azure Ecosystem:</strong> Deep experience with App Services,
+                                        Functions, Service Bus, API Management, Azure SQL, and CosmosDB to build
+                                        cloud-first solutions.</span>
+                                </li>
+                                <li class="flex items-start gap-3"><i data-lucide="check"
+                                        class="w-5 h-5 text-brand-600 dark:text-brand-400 mt-0.5 shrink-0"></i>
+                                    <span><strong>Framework Mastery:</strong> Extensive background building robust
+                                        applications using ASP.NET MVC, .NET Core, Entity Framework, and Web API.</span>
+                                </li>
+                                <li class="flex items-start gap-3"><i data-lucide="check"
+                                        class="w-5 h-5 text-brand-600 dark:text-brand-400 mt-0.5 shrink-0"></i>
+                                    <span><strong>Data Layer:</strong> Advanced SQL Server schema design, stored
+                                        procedures, SSRS/SSIS, and optimization for high-volume transactions.</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Content 2 -->
+                        <div
+                            class="tab-content hidden p-8 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 print-break-inside-avoid shadow-sm">
+                            <h3 class="text-2xl font-bold mb-4 flex items-center gap-3 text-slate-900 dark:text-white">
+                                <i data-lucide="database" class="w-6 h-6 text-brand-600 dark:text-brand-400"></i> Data,
+                                Mar-Tech & AI Enablement
+                            </h3>
+                            <p class="text-slate-700 dark:text-slate-300 mb-6 leading-relaxed text-lg">
+                                Bridging transactional architecture with marketing tech, analytical, and AI platforms to
+                                drive personalization and intelligent search.
+                            </p>
+                            <ul class="space-y-4 text-slate-800 dark:text-slate-300">
+                                <li class="flex items-start gap-3"><i data-lucide="check"
+                                        class="w-5 h-5 text-brand-600 dark:text-brand-400 mt-0.5 shrink-0"></i>
+                                    <span><strong>Sales &amp; Mar-Tech Integration:</strong> Architected Shopify &harr;
+                                        Salesforce Marketing Cloud integrations, enabling unified consumer journeys and
+                                        automated marketing triggers.</span>
+                                </li>
+                                <li class="flex items-start gap-3"><i data-lucide="check"
+                                        class="w-5 h-5 text-brand-600 dark:text-brand-400 mt-0.5 shrink-0"></i>
+                                    <span><strong>Lakehouse Architecture:</strong> Guiding Databricks and Snowflake
+                                        implementations for scalable enterprise analytics.</span>
+                                </li>
+                                <li class="flex items-start gap-3"><i data-lucide="check"
+                                        class="w-5 h-5 text-brand-600 dark:text-brand-400 mt-0.5 shrink-0"></i>
+                                    <span><strong>GenAI Integration:</strong> Architected Milvus vector DB integrations
+                                        for semantic search and commercial GenAI pilots.</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Content 3 -->
+                        <div
+                            class="tab-content hidden p-8 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 print-break-inside-avoid shadow-sm">
+                            <h3 class="text-2xl font-bold mb-4 flex items-center gap-3 text-slate-900 dark:text-white">
+                                <i data-lucide="blocks" class="w-6 h-6 text-brand-600 dark:text-brand-400"></i>
+                                API-First & Integration (DDD)
+                            </h3>
+                            <p class="text-slate-700 dark:text-slate-300 mb-6 leading-relaxed text-lg">
+                                Transitioning complex legacy monoliths into bounded, maintainable microservices using
+                                Domain-Driven Design principles.
+                            </p>
+                            <ul class="space-y-4 text-slate-800 dark:text-slate-300">
+                                <li class="flex items-start gap-3"><i data-lucide="check"
+                                        class="w-5 h-5 text-brand-600 dark:text-brand-400 mt-0.5 shrink-0"></i>
+                                    <span><strong>Event-Driven Patterns:</strong> Utilizing RabbitMQ, Kafka, and Azure
+                                        Service Bus to decouple retail, IoT, and commercial systems for high
+                                        fault-tolerance.</span>
+                                </li>
+                                <li class="flex items-start gap-3"><i data-lucide="check"
+                                        class="w-5 h-5 text-brand-600 dark:text-brand-400 mt-0.5 shrink-0"></i>
+                                    <span><strong>API Gateway Strategy:</strong> Standardizing ingress, rate-limiting,
+                                        and auth for global omni-channel consumers.</span>
+                                </li>
+                                <li class="flex items-start gap-3"><i data-lucide="check"
+                                        class="w-5 h-5 text-brand-600 dark:text-brand-400 mt-0.5 shrink-0"></i>
+                                    <span><strong>Walmart Scale:</strong> Decomposed supply chain systems using Node.js
+                                        and Kafka to handle extreme transaction peaks and IoT data streams.</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. REFERENCE ARCHITECTURE (Conceptual) -->
+        <section id="architecture" class="px-6 lg:px-20 py-20 bg-slate-50 dark:bg-slate-900 print-break-inside-avoid">
+            <div class="max-w-7xl">
+                <div class="mb-12 reveal">
+                    <h2 class="text-3xl md:text-4xl font-extrabold mb-3 text-slate-900 dark:text-white">Omnichannel
+                        <span class="gradient-text">Reference Architecture</span>
+                    </h2>
+                    <p class="text-lg text-slate-500 dark:text-slate-400">A conceptual blueprint demonstrating modern,
+                        event-driven commerce design principles.</p>
+                </div>
+
+                <div class="flex flex-col xl:flex-row gap-8">
+                    <!-- Diagram Visual -->
+                    <div
+                        class="xl:w-2/3 p-8 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 overflow-x-auto shadow-sm">
+                        <div class="min-w-[700px] flex flex-col gap-8 font-mono text-xs">
+
+                            <!-- Layer: Touchpoints -->
+                            <div class="flex gap-4">
+                                <div
+                                    class="w-1/6 flex items-center justify-end text-slate-500 dark:text-slate-400 uppercase font-bold text-[10px] tracking-widest pr-4 border-r border-slate-300 dark:border-slate-600">
+                                    Channels</div>
+                                <div class="w-5/6 flex justify-between gap-4">
+                                    <div
+                                        class="flex-1 bg-slate-50 dark:bg-slate-700/50 border border-slate-200 dark:border-slate-600 p-4 rounded-lg text-center shadow-sm font-bold text-slate-800 dark:text-slate-200">
+                                        Web / E-Comm</div>
+                                    <div
+                                        class="flex-1 bg-slate-50 dark:bg-slate-700/50 border border-slate-200 dark:border-slate-600 p-4 rounded-lg text-center shadow-sm font-bold text-slate-800 dark:text-slate-200">
+                                        Mobile App</div>
+                                    <div
+                                        class="flex-1 bg-slate-50 dark:bg-slate-700/50 border border-slate-200 dark:border-slate-600 p-4 rounded-lg text-center shadow-sm font-bold text-slate-800 dark:text-slate-200">
+                                        POS System</div>
+                                </div>
+                            </div>
+
+                            <!-- Layer: Gateway -->
+                            <div class="flex gap-4">
+                                <div class="w-1/6"></div>
+                                <div class="w-5/6 relative">
+                                    <div
+                                        class="absolute inset-0 flex items-center justify-center pointer-events-none z-0 h-full">
+                                        <svg class="w-full h-8" viewBox="0 0 100 10" preserveAspectRatio="none">
+                                            <line x1="16%" y1="0" x2="16%" y2="10" stroke="currentColor"
+                                                class="text-slate-300 dark:text-slate-600" stroke-width="2" />
+                                            <line x1="50%" y1="0" x2="50%" y2="10" stroke="currentColor"
+                                                class="text-slate-300 dark:text-slate-600" stroke-width="2" />
+                                            <line x1="84%" y1="0" x2="84%" y2="10" stroke="currentColor"
+                                                class="text-slate-300 dark:text-slate-600" stroke-width="2" />
+                                        </svg>
+                                    </div>
+                                    <div
+                                        class="bg-brand-50 dark:bg-brand-900/30 border border-brand-200 dark:border-brand-700 p-4 rounded-lg text-center text-brand-700 dark:text-brand-300 font-bold relative z-10 shadow-sm">
+                                        API Gateway / BFF (Identity, Rate Limit, WAF)
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Layer: Microservices & Event Bus -->
+                            <div class="flex gap-4">
+                                <div
+                                    class="w-1/6 flex items-center justify-end text-slate-500 dark:text-slate-400 uppercase font-bold text-[10px] tracking-widest pr-4 border-r border-slate-300 dark:border-slate-600">
+                                    Domain Services</div>
+                                <div class="w-5/6 flex flex-col gap-6">
+                                    <div class="flex justify-between gap-3 font-semibold">
+                                        <div
+                                            class="flex-1 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 p-3 rounded-lg text-center shadow-sm text-slate-800 dark:text-slate-200">
+                                            Catalog API</div>
+                                        <div
+                                            class="flex-1 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 p-3 rounded-lg text-center shadow-sm text-slate-800 dark:text-slate-200">
+                                            Cart API</div>
+                                        <div
+                                            class="flex-1 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 p-3 rounded-lg text-center shadow-sm text-slate-800 dark:text-slate-200">
+                                            Promo API</div>
+                                        <div
+                                            class="flex-1 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 p-3 rounded-lg text-center shadow-sm text-slate-800 dark:text-slate-200">
+                                            Search API</div>
+                                    </div>
+
+                                    <!-- Event Bus -->
+                                    <div
+                                        class="bg-slate-100 dark:bg-slate-700/50 border-2 border-dashed border-slate-400 dark:border-slate-500 p-3 rounded-lg text-center text-slate-900 dark:text-slate-200 font-bold relative">
+                                        Event Bus (Azure Service Bus / Kafka)
+                                        <svg class="absolute w-full h-full inset-0 pointer-events-none">
+                                            <line x1="0" y1="50%" x2="100%" y2="50%" stroke="currentColor"
+                                                stroke-width="2" class="arch-line text-slate-400/50" />
+                                        </svg>
+                                    </div>
+
+                                    <div class="flex justify-between gap-3 font-semibold">
+                                        <div
+                                            class="flex-1 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 p-3 rounded-lg text-center shadow-sm text-slate-800 dark:text-slate-200">
+                                            Order (OMS)</div>
+                                        <div
+                                            class="flex-1 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 p-3 rounded-lg text-center shadow-sm text-slate-800 dark:text-slate-200">
+                                            Inventory / IoT Data</div>
+                                        <div
+                                            class="flex-1 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 p-3 rounded-lg text-center shadow-sm text-slate-800 dark:text-slate-200">
+                                            Profile (CDP)</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Layer: Data & Core Systems -->
+                            <div class="flex gap-4">
+                                <div
+                                    class="w-1/6 flex items-center justify-end text-slate-500 dark:text-slate-400 uppercase font-bold text-[10px] tracking-widest pr-4 border-r border-slate-300 dark:border-slate-600">
+                                    Data & Core</div>
+                                <div class="w-5/6 flex justify-between gap-4 relative">
+                                    <div
+                                        class="flex-1 bg-indigo-50 dark:bg-indigo-900/20 border border-indigo-200 dark:border-indigo-800/50 p-4 rounded-lg text-center text-indigo-800 dark:text-indigo-300 shadow-sm flex flex-col justify-center font-bold">
+                                        Data Lakehouse <br><span
+                                            class="text-[10px] font-medium opacity-80">(Databricks/Snowflake)</span>
+                                    </div>
+                                    <div
+                                        class="flex-1 bg-slate-50 dark:bg-slate-900 border border-slate-300 dark:border-slate-700 p-4 rounded-lg text-center shadow-sm flex flex-col justify-center font-bold text-slate-800 dark:text-slate-200">
+                                        Vector DB & AI <br><span class="text-[10px] font-medium opacity-80">(Milvus /
+                                            GenAI)</span>
+                                    </div>
+                                    <div
+                                        class="flex-1 bg-slate-50 dark:bg-slate-900 border border-slate-300 dark:border-slate-700 p-4 rounded-lg text-center shadow-sm flex flex-col justify-center font-bold text-slate-800 dark:text-slate-200">
+                                        Mar-Tech / ERP <br><span class="text-[10px] font-medium opacity-80">(SFMC /
+                                            SAP)</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- Architecture Principles -->
+                    <div class="xl:w-1/3">
+                        <div
+                            class="p-8 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 h-full shadow-sm">
+                            <h3
+                                class="text-xl font-bold mb-6 text-slate-900 dark:text-white border-b border-slate-200 dark:border-slate-700 pb-3">
+                                Design Principles Applied</h3>
+                            <ul class="space-y-6 text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
+                                <li>
+                                    <strong class="text-brand-600 dark:text-brand-400 block mb-1.5 text-base">API-First
+                                        & Headless</strong>
+                                    Decoupling UI from backend logic allows independent scaling of B2B, B2C, and App
+                                    channels.
+                                </li>
+                                <li>
+                                    <strong
+                                        class="text-brand-600 dark:text-brand-400 block mb-1.5 text-base">Event-Driven
+                                        Integration</strong>
+                                    Replacing point-to-point batch jobs with real-time publish-subscribe (Azure Service
+                                    Bus/Kafka) for inventory, IoT sensor data, and order routing.
+                                </li>
+                                <li>
+                                    <strong class="text-brand-600 dark:text-brand-400 block mb-1.5 text-base">Strict
+                                        Domain Boundaries</strong>
+                                    Bounded contexts (DDD) prevent database coupling, making OMS and PIM individually
+                                    upgradable.
+                                </li>
+                                <li>
+                                    <strong class="text-brand-600 dark:text-brand-400 block mb-1.5 text-base">Data
+                                        Democratization & Mar-Tech</strong>
+                                    Streaming telemetry and domain events directly to the Lakehouse fuels GenAI,
+                                    personalization, and marketing (SFMC) without impacting operational databases.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. METRICS & SKILLS (Rendered via JSON JS) -->
+        <section id="metrics"
+            class="px-6 lg:px-20 py-20 bg-white dark:bg-slate-900 border-y border-slate-200 dark:border-slate-800 print-break-before">
+            <div class="max-w-5xl">
+
+                <div class="mb-12 reveal">
+                    <h2 class="text-3xl md:text-4xl font-extrabold mb-3 text-slate-900 dark:text-white">Impact & <span
+                            class="gradient-text">Tooling</span>
+                    </h2>
+                    <p class="text-lg text-slate-500 dark:text-slate-400">Measurable outcomes and technology stack
+                        matrix.</p>
+                </div>
+
+                <!-- Impact Metrics Grid -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mb-20" id="metrics-container">
+                    <!-- JS populated -->
+                </div>
+
+                <!-- Skills Matrix -->
+                <h3 class="text-2xl font-extrabold mb-8 text-slate-900 dark:text-white">Technology Stack</h3>
+                <div id="skills-container" class="space-y-6">
+                    <!-- JS populated -->
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 8. FOOTER / CONTACT -->
+        <!-- Gradient separator -->
+        <div class="h-[3px] w-full bg-gradient-to-r from-brand-500 via-violet-500 to-accent-500"></div>
+        <footer
+            class="px-6 lg:px-20 py-12 bg-white dark:bg-slate-950 print-break-inside-avoid text-center lg:text-left flex flex-col lg:flex-row justify-between items-center gap-8">
+            <div>
+                <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-2 tracking-tight">Kushal M K</h2>
+                <p class="text-sm font-bold gradient-text">Principal Solution Architect</p>
+                <div class="mt-5 flex flex-wrap gap-6 justify-center lg:justify-start">
+                    <a href="mailto:emailkushalmk@gmail.com"
+                        class="text-slate-600 dark:text-slate-300 hover:text-brand-500 transition-colors flex items-center gap-2 text-sm font-semibold"><i
+                            data-lucide="mail" class="w-4 h-4"></i> emailkushalmk@gmail.com</a>
+                    <span class="text-slate-600 dark:text-slate-300 flex items-center gap-2 text-sm font-semibold"><i
+                            data-lucide="phone" class="w-4 h-4"></i> +91 8147891323</span>
+                </div>
+            </div>
+            <div class="text-sm text-slate-400 dark:text-slate-500 text-center lg:text-right max-w-md leading-relaxed">
+                <p>Architectural references provided are conceptualized models to respect employer confidentiality while
+                    demonstrating design capability.</p>
+                <p class="mt-3 font-bold">&copy; 2026 Kushal M K.</p>
+            </div>
+        </footer>
+
+    </main>
+
+    <!-- DATA & LOGIC SCRIPTS -->
+    <script>
+        lucide.createIcons();
+
+        // -------------------------------------------------------------
+        // JSON CONFIGURATION
+        // -------------------------------------------------------------
+        const portfolioData = {
+            experience: [
+                {
+                    company: "Kenvue",
+                    logo: "https://logo.clearbit.com/kenvue.com",
+                    location: "Bengaluru, Karnataka, India \u00b7 Hybrid",
+                    role: "Sr Manager | Principal Solution Architect | Commercial - SalesTech | MarTech | AdTech",
+                    period: "Jun 2024 - Present",
+                    prevRole: "Software Engineering Manager | Staff Engineer",
+                    prevPeriod: "Oct 2023 - Jun 2024",
+                    totalTenure: "Full-time \u00b7 2 yrs 5 mos",
+                    description: "Driving digital transformation for a global CPG leader. Leading architecture across commercial and connected consumer initiatives\u2014SalesTech, MarTech, and AdTech\u2014defining scalable cloud-native patterns for API-first and integration-heavy solutions.",
+                    highlights: [
+                        "Contributed to enterprise architecture governance by defining reusable standards, platform guardrails, and solution review practices.",
+                        "Supported architecture for retail and customer experience integrations, including <strong>Shopify \u2194 Salesforce Marketing Cloud (Mar-Tech)</strong> alignment.",
+                        "Influenced modern data platform and personalization architecture (Databricks, Snowflake, Milvus vector DB) for Sales-Tech and intelligent experiences.",
+                        "Advised teams on modern architecture patterns across Azure and AWS, including serverless adoption and DevSecOps.",
+                        "Drove large-scale cloud cost optimization and infrastructure refactoring, maximizing ROI and platform efficiency.",
+                        "Architected solutions on <strong>.NET/C# and Azure stack</strong> (App Services, Functions, Service Bus, AKS), ensuring enterprise-grade reliability and performance across commercial platforms.",
+                        "Drove <strong>AI-assisted architecture enablement</strong> to improve speed and consistency of enterprise architecture outputs\u2014structured requirements decomposition, architecture artifact acceleration, and standards/patterns consumption.",
+                        "Shaped <strong>agentic AI and MCP-oriented architecture thinking</strong> for enterprise use cases, including knowledge/search access patterns across architecture documentation and collaboration platforms.",
+                        "Designed AI-powered internal architecture experiences (portal/search/assistant concepts) to improve discoverability and reuse of standards, patterns, and architecture guidance.",
+                        "Applied GenAI-assisted workflows to accelerate architecture-to-delivery alignment\u2014translating business/solution requirements into structured delivery artifacts and implementation-ready views.",
+                        "Promoted governance-first adoption of AI capabilities by aligning experimentation with enterprise standards, architecture review expectations, and scalable operating models."
+                    ]
+                },
+                {
+                    company: "Cyara",
+                    logo: "https://logo.clearbit.com/cyara.com",
+                    location: "Brisbane/Melbourne, Australia",
+                    role: "Tech Lead / Engineering Manager",
+                    period: "Dec 2021 - Sept 2023",
+                    description: "Led modernization architecture for legacy platforms, transitioning monolithic systems to microservices-based, containerized architectures.",
+                    highlights: [
+                        "Drove event-driven refactoring of core services using Docker, Kubernetes, and RabbitMQ, improving scalability and fault tolerance.",
+                        "Introduced platform governance and developer enablement capabilities (Backstage.io), accelerating onboarding.",
+                        "Provided hands-on design leadership and architecture reviews while mentoring engineering squads.",
+                        "Streamlined CI/CD with TeamCity and embedded Spotify squad Agile models."
+                    ]
+                },
+                {
+                    company: "Walmart Labs",
+                    logo: "https://logo.clearbit.com/walmart.com",
+                    location: "Bengaluru, India",
+                    role: "Senior Engineer",
+                    period: "Jan 2015 - Jun 2019",
+                    description: "Built and supported enterprise-scale retail, IoT, and supply chain platforms handling massive transaction flows and personalization use cases.",
+                    highlights: [
+                        "Contributed to decomposition of legacy systems into microservices and event-streaming integrations (Kafka / Node.js), supporting massive retail platform scalability.",
+                        "Participated in architecture forums and cross-team design reviews for high-scale retail systems, internal APIs, and <strong>IoT integrations</strong>.",
+                        "Contributed to consumer data and personalization pipelines, supporting targeted experiences and large-scale data processing.",
+                        "Co-inventor on two patents (targeted advertising and automated resume screening), demonstrating innovation in data-driven systems."
+                    ]
+                },
+                {
+                    company: "Siemens",
+                    logo: "https://logo.clearbit.com/siemens.com",
+                    location: "Bengaluru, India",
+                    role: "Sr Systems Engineer",
+                    period: "Apr 2012 - Sep 2014",
+                    description: "Established a strong hands-on foundation in Microsoft stack and enterprise software.",
+                    highlights: [
+                        "Built enterprise applications using ASP.NET MVC, C#, Entity Framework, SQL Server, SSRS, and SSIS.",
+                        "Worked across the full SDLC: requirements analysis, technical design, development, testing, and deployment.",
+                        "Developed reusable templates and applied software design patterns to improve maintainability."
+                    ]
+                },
+                {
+                    company: "Additional Enterprise Roles",
+                    logo: "",
+                    location: "Australia & India",
+                    role: "Tech Lead / Cloud Architect",
+                    period: "2011 - 2021",
+                    description: "Progressive technical leadership roles establishing deep hands-on expertise in Cloud and .NET.",
+                    highlights: [
+                        "<strong>InfoTrack:</strong> Led architecture reviews and modernization for integration-heavy legal-tech platforms requiring high availability and data governance.",
+                        "<strong>MatchBoxExchange:</strong> Delivered cloud modernization on Azure (ARM templates/CLI), reducing deployment time by 50% and operational costs by 70%.",
+                        "<strong>Emerson:</strong> Championed cloud-first strategies, migrating legacy applications to Azure and implementing advanced telemetry."
+                    ]
+                }
+            ],
+            metrics: [
+                { value: "14+", label: "Years Experience" },
+                { value: "70%", label: "Cloud Cost Reduction" },
+                { value: "CPG & Retail", label: "Enterprise Domains" },
+                { value: "2", label: "Patents (Walmart)" }
+            ],
+            skills: [
+                { category: "Cloud & Platform Eng", items: ["Azure", "AWS", "Kubernetes (AKS)", "Docker", "DevSecOps", "CI/CD", "Terraform/ARM"] },
+                { category: "Enterprise Architecture", items: ["Microservices", "API-First", "Event-Driven (Kafka)", "Domain-Driven Design (DDD)", "Target-State Architecture", "Architecture Governance"] },
+                { category: "AI / GenAI / Agentic", items: ["AI/GenAI Solution Architecture", "Agentic AI Workflow Design", "MCP Server Strategy", "AI-assisted Requirements Decomposition", "Architecture Portal & Search Patterns", "AI Governance & Guardrails", "LLM Workflow Design", "Prompt Engineering for EA", "Semantic Search / Vector Knowledge"] },
+                { category: "Backend & Front-end", items: ["C# / .NET Core", "ASP.NET MVC", "Node.js", "Python", "React", "Angular", "Vue", "TypeScript"] },
+                { category: "Data, Search & AI", items: ["SQL Server", "Databricks", "Snowflake", "Milvus (Vector DB)", "PostgreSQL", "Azure OpenAI", "RAG Patterns"] },
+                { category: "Domains & Integrations", items: ["Retail Scale Systems", "CPG Platforms", "Mar-Tech (SFMC)", "Sales-Tech", "Shopify", "IoT Integrations", "Omnichannel Commerce"] }
+            ]
+        };
+
+        // -------------------------------------------------------------
+        // RENDER FUNCTIONS
+        // -------------------------------------------------------------
+        function renderExperience() {
+            const container = document.getElementById('experience-container');
+            container.innerHTML = portfolioData.experience.map((exp, index) => {
+                const logoHtml = exp.logo
+                    ? `<img src="${exp.logo}" alt="${exp.company} logo" class="w-10 h-10 md:w-12 md:h-12 rounded-lg object-contain bg-white p-1.5 border border-slate-200 shadow-sm shrink-0" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"/>
+                       <div class="hidden w-10 h-10 md:w-12 md:h-12 rounded-lg bg-slate-800 border border-slate-700 text-slate-500 items-center justify-center shrink-0"><i data-lucide="building" class="w-5 h-5"></i></div>`
+                    : `<div class="flex w-10 h-10 md:w-12 md:h-12 rounded-lg bg-slate-800 border border-slate-700 text-slate-500 items-center justify-center shrink-0"><i data-lucide="building" class="w-5 h-5"></i></div>`;
+
+                // Build sub-roles section if available (e.g., Kenvue promotion)
+                const subRolesHtml = exp.prevRole ? `
+                    <div class="mt-3 mb-4 space-y-2">
+                        <div class="flex items-center gap-3">
+                            <div class="w-2 h-2 rounded-full bg-brand-400"></div>
+                            <div>
+                                <div class="text-[14px] font-bold text-brand-400">${exp.role}</div>
+                                <div class="text-xs font-mono text-slate-400">${exp.period}</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="w-2 h-2 rounded-full bg-slate-500"></div>
+                            <div>
+                                <div class="text-[14px] font-semibold text-slate-400">${exp.prevRole}</div>
+                                <div class="text-xs font-mono text-slate-500">${exp.prevPeriod}</div>
+                            </div>
+                        </div>
+                    </div>
+                ` : '';
+
+                const tenureHtml = exp.totalTenure ? `<span class="text-xs font-mono text-slate-500 ml-2">${exp.totalTenure}</span>` : '';
+
+                const roleDisplay = exp.prevRole
+                    ? `<div class="text-[13px] font-semibold text-slate-500 mt-0.5">${exp.totalTenure || ''}</div>`
+                    : `<div class="text-[15px] font-bold text-brand-400 mt-1">${exp.role}</div>`;
+
+                const periodDisplay = exp.prevRole ? '' : `<span class="text-sm font-mono text-slate-300 bg-slate-800 px-3 py-1 rounded-lg border border-slate-700 w-max font-semibold shadow-sm">${exp.period}</span>`;
+
+                return `
+                <div class="relative pl-8 sm:pl-12 group print-break-inside-avoid reveal" style="transition-delay:${index * 0.1}s">
+                    <!-- Timeline Dot (Glowing) -->
+                    <div class="absolute left-[-6px] top-4 w-3 h-3 rounded-full bg-brand-500 pulse-cyan ring-4 ring-slate-900"></div>
+                    
+                    <div class="mb-2 flex flex-col sm:flex-row gap-4 sm:justify-between sm:items-start">
+                        <div class="flex items-center gap-4">
+                            ${logoHtml}
+                            <div>
+                                <h3 class="text-2xl font-black text-white leading-tight">${exp.company}</h3>
+                                ${roleDisplay}
+                            </div>
+                        </div>
+                        ${periodDisplay}
+                    </div>
+                    
+                    ${subRolesHtml}
+                    
+                    <div class="text-sm font-bold text-slate-400 mb-3">${exp.location}</div>
+                    <p class="text-[15px] font-medium text-slate-300 mb-5 leading-relaxed">${exp.description}</p>
+                    
+                    <ul class="glass-card space-y-3 text-sm text-slate-300 p-5 rounded-xl shadow-sm">
+                        ${exp.highlights.map(h => `<li class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-brand-400 shrink-0"></i> <span class="pt-0.5">${h}</span></li>`).join('')}
+                    </ul>
+                </div>
+            `}).join('');
+        }
+
+        function renderMetrics() {
+            const container = document.getElementById('metrics-container');
+            container.innerHTML = portfolioData.metrics.map((m, i) => `
+                <div class="glass-card gradient-border-top p-6 rounded-xl text-center reveal" style="transition-delay:${i * 0.1}s">
+                    <div class="text-4xl md:text-5xl font-black gradient-text mb-2">${m.value}</div>
+                    <div class="text-[12px] font-bold text-slate-500 dark:text-slate-400 uppercase tracking-widest">${m.label}</div>
+                </div>
+            `).join('');
+        }
+
+        function renderSkills() {
+            const container = document.getElementById('skills-container');
+            container.innerHTML = portfolioData.skills.map((group, gi) => `
+                <div class="flex flex-col md:flex-row gap-4 md:gap-8 border-b border-slate-200 dark:border-slate-700 pb-6 last:border-0 last:pb-0 print-break-inside-avoid reveal" style="transition-delay:${gi * 0.08}s">
+                    <div class="md:w-1/4 font-bold text-slate-900 dark:text-white text-lg">${group.category}</div>
+                    <div class="md:w-3/4 flex flex-wrap gap-2.5">
+                        ${group.items.map(skill => `
+                            <span class="shimmer px-4 py-2 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg text-sm font-semibold text-slate-700 dark:text-slate-300 shadow-sm">${skill}</span>
+                        `).join('')}
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // -------------------------------------------------------------
+        // INTERACTIVITY LOGIC
+        // -------------------------------------------------------------
+
+        window.switchTab = function (index) {
+            const tabs = document.querySelectorAll('.tab-btn');
+            const contents = document.querySelectorAll('.tab-content');
+
+            tabs.forEach((tab, i) => {
+                if (i === index) {
+                    tab.classList.remove('border-transparent', 'text-slate-700', 'dark:text-slate-400', 'hover:bg-slate-200', 'dark:hover:bg-slate-800');
+                    tab.classList.add('border-brand-500', 'bg-brand-50', 'dark:bg-slate-800', 'font-extrabold', 'text-brand-700', 'dark:text-brand-400', 'shadow-sm');
+                } else {
+                    tab.classList.add('border-transparent', 'text-slate-700', 'dark:text-slate-400', 'hover:bg-slate-200', 'dark:hover:bg-slate-700');
+                    tab.classList.remove('border-brand-500', 'bg-brand-50', 'dark:bg-slate-800', 'font-extrabold', 'text-brand-700', 'dark:text-brand-400', 'shadow-sm');
+                }
+            });
+
+            contents.forEach((content, i) => {
+                if (i === index) {
+                    content.classList.remove('hidden');
+                    content.classList.add('block');
+                } else {
+                    content.classList.remove('block');
+                    content.classList.add('hidden');
+                }
+            });
+        };
+
+        // Always dark mode
+        document.documentElement.classList.add('dark');
+
+        // Mobile menu
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const navLinks = document.getElementById('nav-links');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('hidden');
+            navLinks.classList.toggle('flex');
+            navLinks.classList.toggle('bg-slate-900');
+            navLinks.classList.toggle('absolute');
+            navLinks.classList.toggle('top-full');
+            navLinks.classList.toggle('left-0');
+            navLinks.classList.toggle('w-full');
+            navLinks.classList.toggle('shadow-lg');
+            navLinks.classList.toggle('border-b');
+            navLinks.classList.toggle('border-slate-700');
+            navLinks.classList.toggle('py-4');
+        });
+
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth < 1024) {
+                    navLinks.classList.add('hidden');
+                    navLinks.classList.remove('flex', 'absolute', 'top-full', 'left-0', 'w-full', 'shadow-lg', 'bg-slate-900');
+                }
+            });
+        });
+
+        // -------------------------------------------------------------
+        // SCROLL-SPY (Active Nav Link Highlighting)
+        // -------------------------------------------------------------
+        function initScrollSpy() {
+            const sections = document.querySelectorAll('section[id]');
+            const navLinksAll = document.querySelectorAll('.nav-link');
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        navLinksAll.forEach(link => link.classList.remove('active'));
+                        const activeLink = document.querySelector(`.nav-link[data-section="${entry.target.id}"]`);
+                        if (activeLink) activeLink.classList.add('active');
+                    }
+                });
+            }, { rootMargin: '-20% 0px -70% 0px', threshold: 0 });
+
+            sections.forEach(section => observer.observe(section));
+        }
+
+        // -------------------------------------------------------------
+        // SCROLL REVEAL (Intersection Observer)
+        // -------------------------------------------------------------
+        function initScrollReveal() {
+            const revealElements = document.querySelectorAll('.reveal');
+
+            if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                revealElements.forEach(el => el.classList.add('revealed'));
+                return;
+            }
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('revealed');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+            revealElements.forEach(el => observer.observe(el));
+        }
+
+        // -------------------------------------------------------------
+        // INIT
+        // -------------------------------------------------------------
+        document.addEventListener('DOMContentLoaded', () => {
+            renderExperience();
+            renderMetrics();
+            renderSkills();
+            lucide.createIcons();
+            initScrollSpy();
+            // Small delay to let DOM settle before enabling reveals
+            requestAnimationFrame(() => {
+                initScrollReveal();
+            });
+        });
+
+    </script>
+</body>
+
+</html>
