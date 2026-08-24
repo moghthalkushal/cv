@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" preserveAspectRatio="xMidYMid meet" role="img" aria-labelledby="title desc">
+  <title id="title">Enterprise Architecture Decision System</title>
+  <desc id="desc">Business intent flows through evidence, decision and governance into reusable architecture, delivery controls and measurable outcomes. Public-safe representative pattern.</desc>
+  <metadata>Representative public-safe architecture. Employer-specific systems and confidential implementation details excluded.</metadata>
+  <defs><style>.bg{fill:#07111f}.panel{fill:#102238;stroke:#2d4a68;stroke-width:2}.panel2{fill:#111b33;stroke:#6f63da;stroke-width:2}.label{fill:#52d9ed;font:700 15px Arial}.head{fill:#f1f6fc;font:700 22px Arial}.body{fill:#b6c6d8;font:14px Arial}.small{fill:#849ab3;font:12px Arial}.flow{fill:none;stroke:#45d7eb;stroke-width:3;marker-end:url(#arrow)}.feedback{fill:none;stroke:#9a83ff;stroke-width:3;stroke-dasharray:8 7;marker-end:url(#arrow2)}</style><marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0l10 5-10 5z" fill="#45d7eb"/></marker><marker id="arrow2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0l10 5-10 5z" fill="#9a83ff"/></marker></defs>
+  <rect class="bg" width="1200" height="675"/>
+  <text x="58" y="65" class="head">Enterprise Architecture Decision System</text><text x="58" y="91" class="body">Business intent → evidence → governed decision → reusable delivery</text>
+  <g aria-label="Decision flow">
+    <rect class="panel" x="58" y="150" width="220" height="120" rx="14"/><text class="label" x="78" y="181">01 · BUSINESS INTENT</text><text class="body" x="78" y="215">Growth · Risk · Cost</text><text class="body" x="78" y="239">Regulation · Transformation</text>
+    <rect class="panel" x="340" y="150" width="220" height="120" rx="14"/><text class="label" x="360" y="181">02 · EVIDENCE</text><text class="body" x="360" y="215">Capabilities · Portfolio</text><text class="body" x="360" y="239">Data · NFRs · Dependencies</text>
+    <rect class="panel2" x="622" y="150" width="220" height="120" rx="14"/><text class="label" x="642" y="181">03 · DECISION</text><text class="body" x="642" y="215">Reuse · Invest · Migrate</text><text class="body" x="642" y="239">Tolerate · Retire</text>
+    <rect class="panel2" x="904" y="150" width="238" height="120" rx="14"/><text class="label" x="924" y="181">04 · GOVERNANCE</text><text class="body" x="924" y="215">ARB · ADR · Exceptions</text><text class="body" x="924" y="239">Owners · Gates · Evidence</text>
+    <path class="flow" d="M278 210H332"/><path class="flow" d="M560 210H614"/><path class="flow" d="M842 210H896"/>
+  </g>
+  <g aria-label="Delivery and outcomes">
+    <rect class="panel" x="120" y="382" width="260" height="130" rx="14"/><text class="label" x="142" y="414">REUSABLE ARCHITECTURE</text><text class="body" x="142" y="449">Reference patterns · Standards</text><text class="body" x="142" y="474">Contracts · Paved roads · Templates</text>
+    <rect class="panel" x="470" y="382" width="260" height="130" rx="14"/><text class="label" x="492" y="414">DELIVERY CONTROLS</text><text class="body" x="492" y="449">Identity · Security · Observability</text><text class="body" x="492" y="474">SLOs · DR · FinOps · Compliance</text>
+    <rect class="panel2" x="820" y="382" width="260" height="130" rx="14"/><text class="label" x="842" y="414">MEASURABLE OUTCOMES</text><text class="body" x="842" y="449">Speed · Reuse · Reliability</text><text class="body" x="842" y="474">Risk reduction · Investment clarity</text>
+    <path class="flow" d="M1023 270V330H250V374"/><path class="flow" d="M380 447H462"/><path class="flow" d="M730 447H812"/><path class="feedback" d="M950 512C950 595 730 615 590 526"/>
+  </g>
+  <rect x="58" y="588" width="1084" height="42" rx="10" fill="#0e1c2f"/><text class="small" x="600" y="614" text-anchor="middle">Decision quality = explicit evidence + accountable governance + feedback from outcomes</text>
+</svg>

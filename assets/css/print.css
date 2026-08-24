@@ -1,0 +1,33 @@
+@page { size: A4; margin: 12mm 14mm 12mm 14mm; }
+
+html, body { width: 100%; background: #fff !important; color: #17202b !important; font-family: Arial, Helvetica, sans-serif !important; font-size: 8.7pt !important; line-height: 1.28 !important; }
+.web-only, .web-resume, .diagram-dialog { display: none !important; }
+.print-cv { display: block !important; }
+.print-cv * { box-shadow: none !important; text-shadow: none !important; }
+.print-cv a { color: inherit; text-decoration: none; }
+.print-header { padding-bottom: 3.5mm; border-bottom: 1.4pt solid #17385e; }
+.print-header h1 { margin: 0 0 1mm; color: #132d4b; font-size: 23pt; line-height: 1; letter-spacing: -.6pt; }
+.print-role { margin: 0 0 1.5mm; color: #243b55; font-size: 12pt; font-weight: 700; }
+.print-contact { margin: 0; color: #4a5664; font-size: 7.6pt; overflow-wrap: anywhere; }
+.print-cv section { padding: 0; margin: 4mm 0 0; break-inside: avoid; }
+.print-cv h2 { margin: 0 0 1.5mm; padding-bottom: .7mm; border-bottom: .6pt solid #aeb9c5; color: #17385e; font-size: 10.2pt; line-height: 1.1; letter-spacing: .8pt; text-transform: uppercase; break-after: avoid; }
+.print-cv p { margin: 0; }
+.print-cv ul { margin: 1mm 0 0; padding-left: 4.5mm; }
+.print-cv li { margin: 0 0 .8mm; }
+.impact-bullets { columns: 2; column-gap: 8mm; }
+.impact-bullets li { break-inside: avoid; }
+.expertise-line { font-size: 8.2pt; }
+.print-role-block { margin-top: 4.5mm !important; padding-top: 3mm; border-top: 1.3pt solid #17385e; }
+.print-role-title { display: flex; justify-content: space-between; gap: 10mm; margin-bottom: 1mm; font-size: 9.3pt; }
+.print-role-title strong { color: #17385e; font-size: 10pt; }
+.print-role-title span { white-space: nowrap; color: #47576a; font-size: 8.2pt; font-weight: 700; }
+.portfolio-line { margin-top: 3.5mm !important; padding: 2.5mm 3mm; border-left: 2pt solid #17385e; background: #f2f5f8; font-size: 7.9pt; }
+.print-page-break { break-before: page; height: 0; }
+.print-job { margin: 0 0 2.2mm; break-inside: avoid; }
+.print-job p { display: flex; justify-content: space-between; gap: 8mm; margin-bottom: .4mm; font-size: 8.6pt; }
+.print-job p strong { color: #172b43; }
+.print-job p span { color: #52606f; white-space: nowrap; font-size: 7.8pt; font-weight: 700; }
+.print-job div { color: #344150; font-size: 8.1pt; }
+.print-columns { display: grid; grid-template-columns: 1fr 1fr; gap: 8mm; margin-top: 3mm; }
+.print-columns section { margin-top: 0; }
+.print-columns h2:not(:first-child) { margin-top: 4mm; }
